@@ -1,39 +1,18 @@
-html, body{
-  background-color:#eee;
-}
-
-body{
-  font-family: inherit;
-}
-
-h1 {
-  text-align: center;
-  font-family: monospace;
-  font-weight: bold;
-}
-
-#homeImage {
-  width: 18rem;
-  padding: 3rem;
-}
-
-.nav-link {
-  font-size: larger;
-  font-weight: bolder;
-  color: darkgrey;
-}
-
+a{
+  color: rosybrown;
+},
+img.max-width{
+  width: 100%;
+},
+body, .nav-link, .title-link{
+  color: darkslategrey;
+},
 .nav-link:hover{
-  color: dimgrey;
+  color: darkslategrey;
+},
+h2 {
+  text-align: center;
 }
-
-#layout-container {
-  margin-top: 2rem;
-}
-
-.jumbotron {
-  color:dimgrey;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid lightgrey;
+.project-item{
+  padding-bottom: 2rem;
 }
