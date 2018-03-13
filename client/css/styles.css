@@ -1,18 +1,52 @@
-a{
+a {
   color: rosybrown;
-},
+}
+#layout-container {
+  max-width: 1000px;
+}
 img.max-width{
   width: 100%;
-},
+}
 body, .nav-link, .title-link{
   color: darkslategrey;
-},
+}
 .nav-link:hover{
   color: darkslategrey;
-},
+}
 h2 {
   text-align: center;
 }
-.project-item{
+#header {
+  text-align: center;
+}
+.project-item {
   padding-bottom: 2rem;
+},
+#post-title {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+#left-column {
+  text-align:center;
+}
+#right-column {
+  padding: 3rem;
+  margin-top: 3%;
+  min-height: 50rem;
+}
+#logo-pic {
+  background-color: grey;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+#left-aligned-page {
+  padding-top:5rem;
+}
+#center-aligned-page {
+  padding-top:5rem;
+  text-align: center;
+}
+#footer {
+  padding: 2rem;
+  opacity: 0.8;
 }
