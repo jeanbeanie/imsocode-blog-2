@@ -5,9 +5,9 @@
 module.exports = {
   /* Default Metadata */
   metaData: {
-    metaTitle: 'MERN Vanilla Bean',
-    metaKeywords: 'MERN, Mongo, Express, React, Node',
-    metaDescription: 'Node Express React starter application.',
+    metaTitle: 'Im So Code',
+    metaKeywords: 'node, react, programming, jeane ramos, onlyjeanbean',
+    metaDescription: 'A coders blog',
     metaAuthor: 'Jean',
   },
 };
