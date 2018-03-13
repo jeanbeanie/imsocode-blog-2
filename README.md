@@ -1,6 +1,8 @@
-# MERN Starter App
+# Im So Code (imsocode.com)
 
-Seed starter app using Node (Express) and React (server side rendering) to be used for future projects and whatnot...written by Jeane <http://www.twitter.com/onlyjeanbean>
+Created as an excuse to use my seed starter app which uses Node (Express) and React (server side rendering)
+
+----------------
 
 Webpack/Babel (hot reloading) is set up for development. Ava is included for test running.
 
