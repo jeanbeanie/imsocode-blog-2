@@ -1,0 +1,13 @@
+// Example file for src/config.js
+// After creating and saving src/config.js, delete this example file!! 
+
+module.exports = {
+  // Default Metadata
+  metaData: {
+    metaTitle: 'MERN Vanilla Bean',
+    metaKeywords: 'MERN, Mongo, Express, React, Node',
+    metaDescription: 'Node Express React starter application.',
+    metaAuthor: 'Jean',
+  }
+};
+

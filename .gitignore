@@ -1,0 +1,8 @@
+*.eot  
+*.woff
+*.woff2
+*.svg
+*.ttf
+node_modules/
+.build/
+.DS_store
