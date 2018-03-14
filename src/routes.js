@@ -1,7 +1,7 @@
 /* src/components/routes.js */
 /* @flow */
 
-import HomeContainer from './components/HomeContainer';
+import PostsContainer from './components/posts/PostsContainer';
 import NotFound from './components/NotFound';
 import { metaData } from './config';
 
@@ -17,8 +17,8 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: HomeContainer,
-    loadInitialData: () => loadInitialData(),
+    component: PostsContainer,
+    loadInitialData: () => loadInitialData({ posts: []}),
   },
   {
     component: NotFound,
