@@ -22,8 +22,8 @@ class App extends React.Component<{}> {
                 {...routeProps}
                 render={() => (
                   <div>
-                    <HelmetContainer {...route.loadInitialData()} />
-                    <route.component {...route.loadInitialData()} />
+                    <HelmetContainer {...this.props} />
+                    <route.component {...this.props} />
                   </div>
                 )}
               />
