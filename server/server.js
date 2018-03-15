@@ -16,6 +16,16 @@ import routes from '../src/routes';
 const app = express();
 
 // Serve static files from directory './client'
+
+// Post API routes
+const Post = require('./api/post');
+
+app.get('/api/posts', (req, res) => {
+  Post.getPosts((result) => {
+    res.send(result);
+  });
+});
+
 app.use(express.static('client'));
 
 app.get('*', (req, res) => {
@@ -55,7 +65,6 @@ app.get('*', (req, res) => {
             <App {...routeData} />
           </Html>
         </Router>);
-
       // render the application
       markup.pipe(res);
     });
