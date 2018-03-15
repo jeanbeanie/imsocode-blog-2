@@ -1,6 +1,7 @@
-/* src/components/routes.js */
+/* src/routes.js */
 /* @flow */
 
+import axios from 'axios';
 import PostsContainer from './components/posts/PostsContainer';
 import NotFound from './components/NotFound';
 import { metaData } from './config';
@@ -18,11 +19,19 @@ const routes = [
     path: '/',
     exact: true,
     component: PostsContainer,
-    loadInitialData: () => loadInitialData({ posts: []}),
+    loadInitialData: () => {
+      return axios.get('http://localhost:3000/api/posts')
+        .then((result) => {
+          return loadInitialData({ posts: result.data.reverse() });
+        })
+        .catch((error) => {
+          console.log('Axios error fetching posts!', error);
+        });
+    },
   },
   {
     component: NotFound,
-    loadInitialData: () => loadInitialData({ metaTitle: '404 Status' }),
+    loadInitialData: () => loadInitialData({ title: '404 Status' }),
   },
 ];
 
