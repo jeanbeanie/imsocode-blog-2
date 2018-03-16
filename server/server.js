@@ -26,6 +26,15 @@ app.get('/api/posts', (req, res) => {
   });
 });
 
+app.get('/api/posts/:slug', (req, res) => {
+  // pull post slug from request
+  const { slug } = req.params;
+
+  Post.getPostBySlug(slug, (result) => {
+    res.send(result);
+  });
+});
+
 app.use(express.static('client'));
 
 app.get('*', (req, res) => {
@@ -34,10 +43,11 @@ app.get('*', (req, res) => {
 
   // use 'some' method to imitate <Switch> behavior of selecting only
   // the first route to match
+  const { url } = req;
   routes.some((route) => {
-    const match = matchPath(req.url, route);
+    const match = matchPath(url, route);
     if (match) {
-      promises.push(route.loadInitialData());
+      promises.push(route.loadInitialData(url));
     }
     return match;
   });
