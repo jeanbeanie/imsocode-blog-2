@@ -4,7 +4,7 @@
 import React from 'react';
 
 const ProjectsPage = () => (
-  <div className="rightpageConntentleftAligned">
+  <div id="left-aligned-page">
     <div className="project-item">
       <h5><a className="title-link" rel="noopener noreferrer" target="_blank" href="https://github.com/jeanbeanie/mern_starter_app">MERN Starter Seed</a></h5>
       <p>

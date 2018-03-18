@@ -4,7 +4,7 @@
 import React from 'react';
 
 const ContactPage = () => (
-  <div className="styles.right.pageContent.centerAligned">
+  <div id="center-aligned-page">
     <p>Check me out on <a rel="noopener noreferrer" target="_blank" href="http://www.github.com/jeanbeanie">Github</a></p>
     <br />
     <p>Follow me on <a rel="noopener noreferrer" target="_blank" href="http://www.twitter.com/onlyjeanbean">Twitter</a></p>
