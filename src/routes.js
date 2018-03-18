@@ -2,9 +2,12 @@
 /* @flow */
 
 import axios from 'axios';
+import React from 'react';
 import PostsContainer from './components/posts/PostsContainer';
 import PostContainer from './components/posts/PostContainer';
-import NotFound from './components/NotFound';
+import PageContainer from './components/pages/PageContainer';
+import ProjectsPage from './components/pages/ProjectsPage';
+import ContactPage from './components/pages/ContactPage';
 import { app, metaData } from './config';
 
 const loadInitialData = (props?: {}) =>
@@ -29,7 +32,7 @@ const routes: Array<{loadInitialData: () => {}}> = [
   { /* Post slug route */
     path: '/blog/:slug',
     component: PostContainer,
-    loadInitialData: (url) => {
+    loadInitialData: (url: string) => {
       const slug = url.substring('/blog/'.length);
       return axios.get(`http://localhost:${app.port}/api/posts/${slug}`)
         .then(result => loadInitialData({ post: result.data }))
@@ -38,11 +41,27 @@ const routes: Array<{loadInitialData: () => {}}> = [
         });
     },
   },
-  /* Projects page route */
-  /* Contact page route */
-  { /* 404 Route */
-    component: NotFound,
-    loadInitialData: () => loadInitialData({ title: '404 Status' }),
+  {/* Projects page route */
+    path: '/projects',
+    component: PageContainer,
+    loadInitialData: () => loadInitialData({
+      title: 'Projects',
+      children: <ProjectsPage />,
+    }),
+  },
+  { /* Contact page route */
+    path: '/contact',
+    component: PageContainer,
+    loadInitialData: () => loadInitialData({
+      title: 'Contact',
+      children: <ContactPage />,
+    }),
+  },
+  { /* 404 route */
+    component: PageContainer,
+    loadInitialData: () => loadInitialData({
+      title: '<404> : Page Not Found!',
+    }),
   },
 ];
 
