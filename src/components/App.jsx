@@ -23,7 +23,10 @@ class App extends React.Component<{}> {
                 render={() => (
                   <div>
                     <HelmetContainer {...this.props} />
-                    <route.component {...this.props} />
+                    <route.component 
+                      loadInitialData={route.loadInitialData} 
+                      {...this.props} 
+                    />
                   </div>
                 )}
               />
