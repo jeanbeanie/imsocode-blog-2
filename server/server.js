@@ -15,13 +15,11 @@ import routes from '../src/routes';
 
 const app = express();
 
-// Serve static files from directory './client'
-
-// Post API routes
-const Post = require('./api/post');
+/* API ROUTES */
+const post = require('./api/post');
 
 app.get('/api/posts', (req, res) => {
-  Post.getPosts((result) => {
+  post.getPosts((result) => {
     res.send(result);
   });
 });
@@ -30,11 +28,12 @@ app.get('/api/posts/:slug', (req, res) => {
   // pull post slug from request
   const { slug } = req.params;
 
-  Post.getPostBySlug(slug, (result) => {
+  post.getPostBySlug(slug, (result) => {
     res.send(result);
   });
 });
 
+/* PUBLIC ROUTES */
 app.use(express.static('client'));
 
 app.get('*', (req, res) => {
@@ -43,8 +42,8 @@ app.get('*', (req, res) => {
 
   // use 'some' method to imitate <Switch> behavior of selecting only
   // the first route to match
-  const { url } = req;
   routes.some((route) => {
+    const { url } = req;
     const match = matchPath(url, route);
     if (match) {
       promises.push(route.loadInitialData(url));
