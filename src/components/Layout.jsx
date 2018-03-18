@@ -5,10 +5,11 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 type Props = {
-  children: React.Node,
+    children: React.Node,
 };
 
 const imageSource = 'https://pbs.twimg.com/profile_images/424484505915621376/EOwsjaMZ.png';
+
 const Layout = (props: Props) => (
   <div className="container" id="layout-container">
     <div className="row">
@@ -18,12 +19,12 @@ const Layout = (props: Props) => (
           <Link to="/" className="nav-link">
             <h2>{'im{so}code'}</h2>
             <hr />
-            <img src={imageSource} alt="" className="rounded-circle" id="logo-pic"/>
+            <img src={imageSource} alt="" className="rounded-circle" id="logo-pic" />
           </Link>
 
-          <p><Link className="nav-link" to="/">Projects</Link></p>
+          <p><Link className="nav-link" to="/projects">Projects</Link></p>
           <p><Link className="nav-link" to="/">Blog</Link></p>
-          <p><Link className="nav-link" to="/">Contact</Link></p>
+          <p><Link className="nav-link" to="/contact">Contact</Link></p>
         </div>
       </div>
 
@@ -31,7 +32,7 @@ const Layout = (props: Props) => (
         {props.children}
         <footer id="footer">
           <hr />
-          <p>&copy; 2017 ImSoCode.com</p>
+          <p>&copy; 2018 Jeane Ramos, ImSoCode.com</p>
         </footer>
       </div>
 
