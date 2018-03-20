@@ -5,11 +5,13 @@
   "main": "src/index.js",
   "scripts": {
     "flow": "node_modules/.bin/flow .",
-    "dev": "webpack-dev-server --env.dev",
-    "build": "webpack",
-    "start:server": "rm -rf ./build && webpack --config webpack.config.server.js",
-    "start:client": "webpack-dev-server --config webpack.config.client.js",
-    "start": "rm -rf ./.build && npm-run-all --parallel start:server start:client",
+    "build:server": "NODE_ENV='production' webpack --config webpack.config.server.js",
+    "build:client": "NODE_ENV='production' webpack --config webpack.config.client.js",
+    "start:server": "rm -rf ./build && NODE_ENV='production' webpack --config webpack.dev.config.server.js",
+    "start:client": "webpack-dev-server --config webpack.dev.config.client.js",
+    "start:dev": "rm -rf ./.build && NODE_ENV='dev' npm-run-all --parallel start:server start:client",
+    "start:production": "NODE_ENV='production' node server/app.js",
+    "start": "npm-run-all build:server build:client start:production",
     "test": "BABEL_ENV=test ava --verbose",
     "watch": "BABEL_ENV=test ava --verbose --watch"
   },

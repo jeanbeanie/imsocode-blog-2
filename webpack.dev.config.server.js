@@ -1,16 +1,19 @@
 const webpack = require('webpack');
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const StartServerPlugin = require('start-server-webpack-plugin');
+const run = console.log('hi', process.env.NODE_ENV);
 
 module.exports = {
   entry: [
-  //  'webpack/hot/poll?1000',
+    'webpack/hot/poll?1000',
     './server/index',
   ],
-  // watch: true,
+  watch: true,
   target: 'node',
-  // externals: [nodeExternals({
-  //  whitelist: ['webpack/hot/poll?1000'],
-  // })],
+  externals: [nodeExternals({
+    whitelist: ['webpack/hot/poll?1000'],
+  })],
 
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -24,9 +27,9 @@ module.exports = {
     }],
   },
   plugins: [
-    // new StartServerPlugin('server.js'),
+    new StartServerPlugin('server.js'),
     new webpack.NamedModulesPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -35,7 +38,7 @@ module.exports = {
     }),
   ],
   output: {
-    path: path.join(__dirname, 'server'),
-    filename: 'app.js',
+    path: path.join(__dirname, '.build'),
+    filename: 'server.js',
   },
 };

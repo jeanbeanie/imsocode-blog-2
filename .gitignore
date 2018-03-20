@@ -1,4 +1,6 @@
 src/config.js
+server/app.js
+client/client.js
 *.eot  
 *.woff
 *.woff2

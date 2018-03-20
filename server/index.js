@@ -4,10 +4,12 @@
 import http from 'http';
 import app from './server';
 
+const { port } = require('../src/config').app;
+
 const server = http.createServer(app);
 
 let currentApp = app;
-server.listen(3000);
+server.listen(port);
 
 if (module.hot) {
   module.hot.accept('./server', () => {

@@ -23,7 +23,7 @@ const routes: Array<{loadInitialData: () => {}}> = [
     path: '/',
     exact: true,
     component: PostsContainer,
-    loadInitialData: () => axios.get(`http://localhost:${app.port}/api/posts`)
+    loadInitialData: () => axios.get(`${app.rootUrl}/api/posts`)
       .then(result => loadInitialData({ posts: result.data.reverse() }))
       .catch((err) => {
         console.log('Axios error fetching posts!', err);
@@ -34,7 +34,7 @@ const routes: Array<{loadInitialData: () => {}}> = [
     component: PostContainer,
     loadInitialData: (url: string) => {
       const slug = url.substring('/blog/'.length);
-      return axios.get(`http://localhost:${app.port}/api/posts/${slug}`)
+      return axios.get(`${app.rootUrl}/api/posts/${slug}`)
         .then(result => loadInitialData({ post: result.data }))
         .catch((err) => {
           console.log('Axios error fetching post by slug!', err);

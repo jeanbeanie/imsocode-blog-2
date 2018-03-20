@@ -2,6 +2,7 @@
 /* @flow */
 
 import * as React from 'react';
+import { app } from '../config';
 
 type Props= {
   children: React.Node,
@@ -24,6 +25,7 @@ const Html = (props: Props) => {
   const data = props.initialData;
   const { helmet } = props;
   const dataJSON = JSON.stringify(data);
+  const { rootUrl } = app;
 
   return (
     <html className="no-js" lang="en">
@@ -38,7 +40,7 @@ const Html = (props: Props) => {
         </div>
 
         <script id="initial-data" type="text/plain" data-json={dataJSON} />
-        <script src="http://localhost:3001/client.js" />
+        <script src={`${rootUrl}/client.js`} />
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous" />

@@ -1,6 +1,8 @@
 /* server/api/post.js */
 const { MongoClient } = require('mongodb');
-const DB = require('../../src/config').db;
+const config = require('../../src/config');
+
+const DB = config.db;
 
 module.exports = {
   // Find all posts in the collection
