@@ -1,6 +1,6 @@
 # Im So Code (http://imsocode.com) ✌🏽🌺
 
-A blog about code, created as an excuse to use my starter seed app : https://github.com/jeanbeanie/mern_starter_app
+I created `ImSoCode.com` 5 years ago using Wordpress : https://web.archive.org/web/20131005043222/http://imsocode.com:80/?p=285. I remade the blog with the MERN stack because I needed an excuse to use the starter app I created (https://github.com/jeanbeanie/mern_starter_app) and because I missed writing about code.
 
 To my starting base, I added MongoDB for this project. The posts for this blog are currently added and managed in a separate MERN project I created that I will be rewriting using the new and improved starter seed app as a base.
 
