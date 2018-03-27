@@ -25,7 +25,7 @@ const Html = (props: Props) => {
   const data = props.initialData;
   const { helmet } = props;
   const dataJSON = JSON.stringify(data);
-  const { rootUrl } = app;
+  const rootUrl = process.env.NODE_ENV === 'production' ? app.rootUrl : app.devRootUrl;
 
   return (
     <html className="no-js" lang="en">
