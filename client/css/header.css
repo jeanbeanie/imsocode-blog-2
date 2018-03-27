@@ -1,0 +1,11 @@
+#header {
+  text-align: center;
+}
+.nav-link:hover{
+  color: darkslategrey;
+}
+#logo-pic {
+  background-color: grey;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
