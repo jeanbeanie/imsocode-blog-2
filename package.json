@@ -7,7 +7,7 @@
     "flow": "node_modules/.bin/flow .",
     "build:server": "NODE_ENV='production' webpack --config webpack.config.server.js",
     "build:client": "NODE_ENV='production' webpack --config webpack.config.client.js",
-    "start:server": "rm -rf ./build && NODE_ENV='production' webpack --config webpack.dev.config.server.js",
+    "start:server": "rm -rf ./build && NODE_ENV='dev' webpack --config webpack.dev.config.server.js",
     "start:client": "webpack-dev-server --config webpack.dev.config.client.js",
     "start:dev": "rm -rf ./.build && NODE_ENV='dev' npm-run-all --parallel start:server start:client",
     "start:production": "NODE_ENV='production' node server/app.js",
