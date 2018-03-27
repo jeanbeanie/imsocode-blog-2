@@ -1,11 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
+const { devPort, devRootUrl } = require('./src/config').app;
 
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3001',
+    `webpack-dev-server/client?${devRootUrl}`,
     'webpack/hot/only-dev-server',
     './client/index',
   ],
@@ -45,13 +46,13 @@ module.exports = {
   devServer: {
     host: 'localhost',
     headers: { 'Access-Control-Allow-Origin': '*' },
-    port: 3001,
+    port: devPort,
     historyApiFallback: true,
     hot: true,
   },
   output: {
     path: path.join(__dirname, '.build'),
-    publicPath: 'http://localhost:3001/',
+    publicPath: '/',
     filename: 'client.js',
   },
 };
