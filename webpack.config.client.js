@@ -31,11 +31,6 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        BUILD_TARGET: JSON.stringify('client'),
-      },
-    }),
   ],
   output: {
     path: path.join(__dirname, 'client'),
