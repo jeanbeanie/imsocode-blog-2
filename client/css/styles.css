@@ -7,6 +7,10 @@
 a {
   color: rosybrown;
 }
+a:hover {
+  color: darkslategrey;
+  text-decoration: none;
+}
 #layout-container {
   max-width: 1000px;
 }
@@ -17,6 +21,7 @@ h2 {
   text-align: center;
 }
 .project-item {
+  padding-top: 2rem;
   padding-bottom: 2rem;
 }
 #left-column {
@@ -28,7 +33,7 @@ h2 {
   min-height: 50rem;
 }
 #left-aligned-page {
-  padding-top:5rem;
+  padding-top:1rem;
 }
 #center-aligned-page {
   padding-top:5rem;
