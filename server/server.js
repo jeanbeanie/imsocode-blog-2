@@ -15,6 +15,13 @@ import routes from '../src/routes';
 
 const app = express();
 
+// Add 'Access-Control-Allow-Origin' header to Express routes
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 /* API ROUTES */
 const post = require('./api/post');
 

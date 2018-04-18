@@ -1,3 +1,4 @@
+package-lock.json
 src/config.js
 server/app.js
 client/client.js
