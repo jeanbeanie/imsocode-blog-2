@@ -2,14 +2,16 @@
 /* @flow */
 
 import * as React from 'react';
+import ProjectsPage from './ProjectsPage';
+import ContactPage from './ContactPage';
 
 class PageContainer extends React.Component <{title?: string, children:React.Node}> {
   constructor(props: {title?: string}) {
     super(props);
     this.state = {
-      title: this.props.title || '',
-      children: this.props.children || <div />,
-    };
+      title: this.props.title,
+      children: this.props.children,
+    }
   }
 
   componentDidMount() {
@@ -25,11 +27,16 @@ class PageContainer extends React.Component <{title?: string, children:React.Nod
   }
 
   render() {
-    const { title, children } = this.state
+    const { title } = this.state;
+    const components = {
+      ProjectsPage,
+      ContactPage
+    };
+    const Children = components[this.state.children];
     return (
       <div>
         <h2>{title}</h2>
-        {children}
+        {<Children />}
       </div>
     );
   }

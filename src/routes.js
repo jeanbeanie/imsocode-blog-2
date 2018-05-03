@@ -46,7 +46,7 @@ const routes: Array<{loadInitialData: () => {}}> = [
     component: PageContainer,
     loadInitialData: () => loadInitialData({
       title: 'Projects',
-      children: <ProjectsPage />,
+      children: 'ProjectsPage',
     }),
   },
   { /* Contact page route */
@@ -54,7 +54,7 @@ const routes: Array<{loadInitialData: () => {}}> = [
     component: PageContainer,
     loadInitialData: () => loadInitialData({
       title: 'Contact',
-      children: <ContactPage />,
+      children: 'ContactPage',
     }),
   },
   { /* 404 route */
