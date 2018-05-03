@@ -10,7 +10,7 @@ class PageContainer extends React.Component <{title?: string, children:React.Nod
     super(props);
     this.state = {
       title: this.props.title,
-      children: this.props.children,
+      children: this.props.children || 'ProjectsPage',
     }
   }
 
